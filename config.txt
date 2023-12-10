@@ -1,0 +1,49 @@
+t1070.001:
+	event_1:
+		id: 1102
+		journal: Security
+	event_2:
+		id: 104
+		journal: System
+	event_3:
+		id: 1
+		field: "CommandLine"
+		pattern: "*wevtutil cl*"
+		journal: Microsoft-Windows-Sysmon/Operational
+	event_4:
+		id: 4104
+		field: "Scriptblock"
+		pattern: "*Remove-Event*"
+		journal: Microsoft-Windows-PowerShell/Operational
+t1547.004:
+	event_1:
+		id: 4657
+		field: "modified"
+		pattern: "*Set-Item*"
+		journal: Security
+	event_2:
+		id: 4660
+		field: "deleted"
+		pattern: "*Remove-Item*"
+		journal: Security
+t1053.005:
+	event_1:
+		id: 4698
+		field: "created"
+		pattern: "*schtasks*/create*"
+		journal: Security
+	event_2: 
+		id: 4699
+		field: "deleted"
+		pattern: "*schtasks*/delete*"
+		journal: Security
+	event_3:
+		id: 102
+		field: "TaskCompletion"
+		pattern: "*Register-ScheduledTask*"
+		journal: Microsoft-Windows-TaskScheduler
+	event_4:
+		id: 201
+		field: "TaskFailed"
+		pattern: "*Unregister-ScheduledTask*"
+		journal: Microsoft-Windows-TaskScheduler
